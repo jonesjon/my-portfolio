@@ -1,0 +1,51 @@
+$theme-colors: (
+    "primary": #152b43,
+    "secundary": #fff 
+);
+
+
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&family=Gluten:wght@100..900&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&family=Playwrite+BE+VLG:wght@100..400&family=Playwrite+CL:wght@100..400&display=swap');
+@import "~bootstrap/scss/bootstrap";
+
+body{
+  font-family: "Alumni Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 1rem;
+  font-style: normal;
+}
+
+header li{
+  font-size: 2rem;
+}
+
+.projects .socials-media{
+  font-size: 4rem;
+}
+
+.projects .container-img {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  --container-height: 300px;
+}
+
+.projects img {
+  position: absolute; /* Permite a rotação da imagem */
+  width: 100%; /* Garante que a imagem se ajuste à largura do container */
+  height: auto; /* Permite que a imagem mantenha a proporção */
+  animation: scroll 5s linear infinite; /* Animação contínua */
+  will-change: transform; /* Otimiza a performance da animação */
+  transition: transform 0.5s; /* Suaviza a transição para rolagem controlada pelo scroll */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(calc(-100% + var(--container-height)));
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
